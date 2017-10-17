@@ -1,0 +1,3 @@
+./a.out: missing integer arg
+Usage: ./a.out [INTEGER]
+  Integer value to square

@@ -1,0 +1,38 @@
+Filename: README
+Name: Vanessa Chou
+Login: cs30xhu
+Date: 5/18/2015
+
+Description: This program will find various anagrams from a word inputted by
+             the user. First, type "./anagrams" followed by a dictionary file
+             such as "word". Then, type any word and press enter and the
+             program will return anagrams made from that word. If there are no
+             possible anagrams, the program states "No anagrams found."
+             Afterwards, the program will continuously asks for another word.
+             To exit the program, type ^D.
+
+How to compile: The program compiles by typing "make" in the terminal.
+
+How to run: To run the program, type the name of the executable and then a
+            dictionary file name. Then, type in a word to find its anagrams.
+
+Normal output: Normal output goes to stdout. An example of normal output is:
+
+./anagrams words
+Enter a word to search for anagrams [^D to exit]: stop
+
+Anagram(s) are: opts, OSTP, Post, post, POTS, pots, SPOT, spot, TOPS, tops
+
+
+Abnormal output: Abnormal output goes to stderr. An example of abnormal
+                 output is when the user inputs the incorrect amount of
+                 files or an invalid file name.
+
+./anagrams word1 word2
+Usage: ./anagrams dictionary_file
+        dictionary_file - containing a list of words
+
+
+Testing: To test the program, I ran my program against examples provided in
+         the PA3 instructions and the sample pa3 program and compared
+	 the outputs.

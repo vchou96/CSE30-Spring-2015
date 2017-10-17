@@ -1,0 +1,42 @@
+Filename: README
+Name: Vanessa Chou
+Login: cs30xhu
+Date: 5/15/2015
+
+Error 1: After typing make, there was an error in compiling reverse: "location
+         counter not on word boundary". The reverse.s file was missing the
+         ".text" section and so the assembly instructions were all in the
+         ".data" section. 
+How to fix: I added this line before the global reverse declaration:
+            .section ".text"
+
+Error 2: After trying to compile, the error "value 0x21144 does not fit"
+         appeared. This is because we used mov to try to pass pa1Str to
+	 printf.
+How to fix: Instead of using mov, I used set to store the label in %o0
+
+Error 3: In the swapChars.s file, there was a missing nop after a branch
+         always to notSame.
+How to fix: I added a nop after the ba line for the delay slot.
+
+Error 4: In the beginning of the text section of the file findEnd.s, the save
+         commands were missing.
+How to fix: I added the line "save   %sp, -96, %sp". 
+
+Error 5: The ld commands in the findEnd.s file were loading 4 bytes of memory.
+         Chars are only supposed to be one byte. This was also in the
+         swapChar.s file.
+How to fix: I changed the ld's to ldub so the pointers dereferenced to get
+         the chars.
+
+Error 6: The reverse.s file was missing a "-" in the save statement.
+How to fix: I added the "-" so it read "save  %sp, -(92+4) & -8, %sp)
+
+Error 7: In the reverse.s file, there is a line that is supposed to decrement
+         the end pointer. However, it incremented it instead.
+How to fix: I added a negative sign in front of the 1 in the line "add %l2, 1,
+            %l2 " so it decremented.
+
+Error 8: In the main.c file, the string was always set as argv[1] instead of
+         where the index was.
+How to fix: I switched it to argv[i] so it would take each inputted argument.

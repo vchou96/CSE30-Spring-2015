@@ -1,0 +1,116 @@
+Filename: README
+Name: Vanessa Chou
+Login: cs30xhu
+Date: 4/7/2015
+
+Description: This program takes in an integer inputted by the user. It then
+             prints a welcome message, the due date of the assignment, and the
+             result of squaring the integer provided by the user.
+
+How to compile: The program compiles by typing "make" in the terminal.
+
+How to run: To run the program, type the name of the exectuable and then a
+            single integer. An example is "./a.out 7"
+
+Normal output: An example of normal output is:
+
+[cs30xhu@ieng9]:pa0$ ./a.out 4
+Welcome to CSE 30, Spring 2015
+PA0 is due on April 7, 2015
+The square of 4 is 16
+
+Normal output goes to stdout.
+
+Abnormal output: An example of abnormal output is when the user does not give 1
+                 integer input (either 0 integers are provided or multiple
+                 integers are provided).
+
+[cs30xhu@ieng9]:pa0$ ./a.out
+./a.out: missing integer arg
+Usage: ./a.out [INTEGER]
+  Integer value to square
+
+[cs30xhu@ieng9]:pa0$ ./a.out 5 10
+./a.out: too many arguments
+Usage: ./a.out [INTEGER]
+  Integer value to square
+
+Abnormal output goes to stderr.
+
+Testing: To test the program, I ran my program against the sample pa0 program
+         provided and then sent the outputs of both programs into two separate
+         files. Comparing the two files with the diff command yielded no
+         differences, meaning that the outputs are the same.
+
+Questions:
+1. The compilation errors were implicit function declaration for fprintf in
+   main.c's line 52, undefined symbol stderr in main.c's line 53, possible
+   variable use before in the set for stderr in main.c's line 53, and
+   implicit function declaration for printf in main.c's line 89. The
+   compilation warning was for main.c. The errors and warnings appeared in the
+   compiler like so:
+
+lint -c -err=warn main.c
+(52) error: implicit function declaration: fprintf
+(53) error: undefined symbol: stderr
+(53) error: variable may be used before set: stderr
+(89) error: implicit function declaration: printf
+
+   To fix the first error, I added #include <stdio.h> at the top of main.c,
+   which also solved the other errors. Additionally, I had to add an &
+   in front of dueDate argument to the printDueDate function call in main.c
+   since the function parameter called for an argument of type struct
+   DueDate *. Finally, I added #include "pa0.h" at the top of printDueDate.c to
+   fix the dubious tag declaration error that came up afterward.
+
+2. The program did not print the correct output at first since argc counted
+   the name of the program and so it interpreted it as multiple integers
+   entered. To fix this, I decremented argc so it would not count the argument
+   name as an integer to be squared. I also used argVal to print the number
+   inputted.
+
+3. We see the line
+
+   int argVal = 0;             /* Value to square from command line */
+
+   which is a line in main.
+
+4. Typing nexti will print 
+   --argVal;
+   1: x/i $pc
+   => 0x10c98 <main+16>:   ld  [ %fp + -4 ], %g1
+
+   since it is the next step in machine instruction.
+   After the second "print dueDate.day", the correct day is printed: 7.
+
+5. Typing x/s $i0 prints the hexadecimal and string of $i0, and we see:
+   0x10f70:        "Spring 2015"
+
+6. A breakpoint is a way to make the program stop when it reaches a particular
+   line in the code. To set a breakpoint, first enter gdb and type "break" and
+   the function name or line number you want to break at.
+
+7. You are debugging function foobar.
+
+8. Step moves to the first line of the function while next executes the
+   function. Stepi and nexti differ from step and next in that they step into
+   machine instructions instead of lines of source code.
+
+9. $o0 $i0 refer to the values of the parameters and variables used in the
+   functions.  
+
+10. The x and p commands both print values of expressions, but x prints the
+    data in lower-level format. Use 'p' to look at the contents of a register
+    and 'x' to look at something in memory. x/s prints the value of the
+    expression in hexadecimal and string format and p/d prints the expression
+    in decimal form. /s prints in string form and /d prints in decimal form.
+
+11. To remove a file from git tracking without deleting it, type
+    "git rm --cached" and then the name of the file to be removed.
+
+12. To view the list of commits, type "git log".
+
+13. To ignore files with a specific extension, create a .gitignore file by
+    typing "touch .gitignore" and add the file extension you want to ignore.
+
+14. The directory that contains the Git metadata is the Git directory.

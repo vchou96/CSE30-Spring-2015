@@ -1,0 +1,52 @@
+Filename: README
+Name: Vanessa Chou
+Login: cs30xhu
+Date: 5/4/2015
+
+Description: This program will encrypt, or encode, data inputted by the user.
+             It takes a passphrase of at least 8 characters, 2 keys to create
+             the encrypted data, a value from -63 to positive 63 to rotate
+             the encoded data, and a file to store the data.
+
+How to compile: The program compiles by typing "make" in the terminal.
+
+How to run: To run the program, type the name of the executable and then
+            the 5 inputs (passphrase, 2  keys, rotation key, and FILE). An example is
+            "./pa2 cse30rules 12 123456 7 test1 > test2"
+
+Normal output: Normal output goes to stdout. An example of normal output is:
+./pa2 cse30rules 1 123456 7 test1 > test2
+
+The output is encrypted data.
+
+Abnormal output: Abnormal output goes to stderr. An example of abnormal
+                 output is when the user inputs an extra argument.
+
+[cs30xhu@ieng9]:pa2$ ./pa2 cse30rules 5
+Usage: ./pa2 passPhrase key1 key2 rotVal FILE
+    passPhrase (must at least eight characters long)
+    key1 (must be numeric; decimal, octal or hexadecimal)
+    key2 (must be numeric; decimal, octal or hexadecimal)
+    rotVal (must be a decimal value within the range [-63 - 63])
+    FILE (must be the name of a file or '-' for stdin)
+								
+Testing: To test the program, I ran my program against examples provided in
+         the PA2 instructions the and the sample pa2 program and compared
+	 the outputs.
+
+Questions:
+1. The command to rename a file is mv old-file-name new-file-name.
+2. The command to copy a file is cp source destination.
+3. The selected text will copy and paste when you middle click.
+4. A file that contains runtime configuration settings for Vim when it starts.
+   You create them by typing vim .vimrc, and then add/edit the commands in the
+   file and then save it. 
+5. Type V in command mode to highlight the lines, and d to cut the line of text to
+   clipboard. To paste, type p in command mode.
+6. Type / in command mode, followed by the string to search.
+7. Type :set nu in command mode.
+8. To change to the fubar directory in a single command, you would type
+   cd ~/fubar in terminal. This will change directly to the home directory
+   and go to the fubar directory.
+9. To change permissions, use the command chmod. To give read permission to
+   group, type chmod g+r filename.

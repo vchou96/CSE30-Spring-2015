@@ -1,0 +1,62 @@
+Filename: README
+Name: Vanessa Chou
+Login: cs30xhu
+Date: 4/18/2015
+
+Description: This program will display an X pattern printed to stdout. The
+             four inputs that it takes refer to the size of the X pattern,
+	     the ASCII values used to display the X, the ASCII values for
+	     the area around the X, and the ASCII characters around the whole
+	     pattern.
+
+How to compile: The program compiles by typing "make" in the terminal.
+
+How to run: To run the program, type the name of the executable and then
+            4 integers for the 4 inputs. An example is "./pa1 8 33 34 35"
+
+Normal output: Normal output goes to stdout. An example of normal output is:
+
+./pa1 8 33 34 35
+##########
+#!""""""!#
+#"!""""!"#
+#""!""!""#
+#"""!!"""#
+#"""!!"""#
+#""!""!""#
+#"!""""!"#
+#!""""""!#
+##########
+
+
+Abnormal output: Abnormal output goes to stderr. An example of abnormal
+                 output is when the user inputs an extra argument.
+
+./pa1 8 33 34 35 36
+
+Usage: ./pa1 X_size X_char filler_char border_char
+    X_size      (must be within the range of [4 - 5000])
+                (must be even)
+    X_char      (must be an ASCII value within the range [32 - 126])
+    filler_char (must be an ASCII value within the range [32 - 126])
+                (must be different than X_char)
+    border_char (must be an ASCII value within the range [32 - 126])
+                (must be different than X_char)
+								
+Testing: To test the program, I ran my program against examples provided in
+         the PA1 instructions the and the sample pa0 program and compared
+	 the outputs.
+
+Questions:
+1. To print the value of the string, type p/x $i0 and then x/s the address
+   (0xffbff2a6).
+2. Type p/d $i2 to get the decimal value 10.
+3. Type p/x $i1 to get the hex value (0xffbff07c).
+4. Use print localvariable (value1 in my case), or display the value in the
+   register by typing p/d $o0.
+5. Type p/x endptr and then x/c the address (0xffbff2a7) to get the character 'I'.
+6. Type p/s endptr to get "InchNails".
+7. Type p/d errno to get the decimal value.
+8. The command is git status.
+9. The command is git reset HEAD.
+10. The command is git diff HEAD.

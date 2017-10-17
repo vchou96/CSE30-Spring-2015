@@ -1,0 +1,36 @@
+Filename: README
+Name: Vanessa Chou
+Login: cs30xhu
+Date: 6/2/2015
+
+Description: This program will allow you to compare two different files and
+             see the similarity or differences. You can enter several
+             options such as -d. -i, -l, -s, and -w to change the kind of
+             output shown on the terminal. -d will hide the lines that differ;
+             -i will ignore capitalization; -l prints same lines only on the
+             left column; -s hides lines that are the same; -w sets the output
+             width. Typing --help will allow you to view all the options you
+             can use as flags. 
+How to compile: The program compiles by typing "make" in the terminal.
+
+How to run: To run the program, type the name of the executable and .
+
+Normal output: Normal output goes to stdout. An example of normal output is:
+pa4$ ./mysdiff testa testb
+aaa   -
+bbb   bbb
+ccc   ccc
+ddd | sss
+    + eee
+
+Abnormal output: Abnormal output goes to stderr. An example of abnormal
+                 output is when the user inputs the incorrect amount of
+                 files.
+
+pa4$ ./mysdiff -W
+./mysdiff: missing operand after '-W'
+./mysdiff: Try './mysdiff --help' for more information.
+
+Testing: To test the program, I ran my program against examples provided in
+         the PA4 instructions and the sample pa4 program and compared
+	 the outputs.

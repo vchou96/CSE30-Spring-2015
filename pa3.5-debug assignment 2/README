@@ -1,0 +1,26 @@
+Filename: README
+Name: Vanessa Chou
+Login: cs30xhu
+Date: 5/24/2015
+
+Error 1: The main.c file contained an undeclared variable numOfChars that was
+         supposed to determine the number of characters in the string. 
+How to fix: I declared extern numOfChars on line 28 in main.c so it referred
+            to the global variable declared in count.c
+
+Error 2: In the count.c file on lines 28 and 33, strlen was an implicit
+         function declaration. It was missing the <string.h> header.
+How to fix: I added #include <string.h> on line 7 at the top of the file.
+
+Error 3: The count.c file was returning a pointer to a local variable and so
+         it would be removed from stack once the function ended.  
+How to fix: I declared the int array asctb as static on line 25.
+
+Error 4: The loop condition in main.c on line 51 was j<sizeof(counts) rather
+         than j<ASCII, which meant it looped BUFSIZ times.   
+How to fix: I changed the loop condition to j<ASCII so it would loop through
+            the array for 256 possible characters.
+
+Error 5: The if statement within the for loop in main.c was missing brackets.
+How to fix: I added brackets so the numOfUniqueChars incremented within the
+            if statement.
